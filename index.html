@@ -1,0 +1,566 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>A Universe For You 💗</title>
+
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+    <div class="stars"></div>
+
+    <main class="welcome">
+        <div class="heart">♡</div>
+
+        <h1>Happy Birthday, My Love. ♡</h1>
+
+        <p id="message"></p>
+
+        <button id="enterBtn" onclick="enterUniverse()">
+            chalo ab, surprise dekho! ✨
+        </button>
+    </main>
+
+    <!-- Cinematic Universe Transition -->
+    <section id="universe" class="universe hidden">
+
+        <div class="portal"></div>
+
+        <div class="universe-content">
+            <h2 id="universeText"></h2>
+
+            <button id="continueBtn" class="hidden" onclick="showChapterOne()">
+                Continue Our Story ♡
+            </button>
+        </div>
+
+    </section>
+
+
+    <!-- Secret Password Screen -->
+    <section id="passwordScreen" class="password-screen hidden">
+
+        <div class="password-card">
+
+            <div class="lock-icon">🔐</div>
+
+            <span class="secret-label">
+                ONLY FOR MY FAVOURITE PERSON ♡
+            </span>
+
+            <h2>Ruko zara, itni bhi kya jaldi h 💗</h2>
+
+            <p>
+                Ye duniya har kisi ke liye nahi hai...
+                Pehle jra meri favourite date toh btao. 🤭
+            </p>
+
+            <input type="text" id="secretPassword" placeholder="Secret password..." autocomplete="off">
+
+            <button onclick="checkPassword()">
+                Unlock My Universe 🔓
+            </button>
+
+            <p id="passwordMessage" aria-live="polite"></p>
+
+        </div>
+
+    </section>
+
+
+    <!-- Chapter 1 -->
+    <section id="chapterOne" class="chapter hidden">
+
+        <span class="chapter-label">CHAPTER 01 — THE BEGINNING</span>
+
+        <h2>Ek Maths Ke Notes Se Shuru Hui Kahani... ♡</h2>
+
+        <p>
+            Yaad hai college ka first year? Jab aapne mujhse pehli baar maths ke notes ka msg kiya tha? ❤️
+
+            Tab toh bilkul idea nahi tha ki notes maangne wala ye ladka ek din meri life ka itna important part ban
+            jayega.
+        </p>
+
+        <p>
+            Pata hi nahi chala kab normal si baatein itni special ho gayi... aur kab aap mere itne close aa gaye.
+
+            Aur dekho aaj... maths ke notes se baat shuru hui thi, aur ab 4 saal hone ko aaye sath m.
+            ❤️
+        </p>
+
+        <div class="chapter-heart">♡</div>
+
+
+        <button onclick="openMusicChapter()">
+            Ek aur chhota sa surprise... 🎧❤️
+        </button>
+
+
+    </section>
+
+
+    <section id="chapterTwo" class="music-chapter hidden">
+        <div class="chapter-two-sparkles" aria-hidden="true">
+            <span>♡</span><span>✦</span><span>♡</span>
+            <span>✧</span><span>♡</span><span>✦</span>
+        </div>
+
+        <div class="music-chapter-content">
+            <span class="music-chapter-label">
+                CHAPTER 02 — JUST A LITTLE MAGIC
+            </span>
+
+            <h2>And Then, There Was <em>You.</em> ♡</h2>
+
+            <p class="music-chapter-subtitle">
+                Kuch log bina kuch kiye hi har din special bana dete hain... 💗
+            </p>
+
+            <div class="dreamy-player">
+                <div class="player-glow"></div>
+
+                <div class="dreamy-photo">
+                    <img src="assets/photos/music-photo.jpg" alt="Our favourite photo">
+                    <span class="photo-sticker">you + me ♡</span>
+                </div>
+
+                <div class="dreamy-song-info">
+                    <span>NOW PLAYING • FOR YOU ONLY</span>
+                    <h3>O Maahi ♡</h3>
+                    <p>A little song, a lot of feelings</p>
+                </div>
+
+                <div class="dreamy-waves" id="musicVisualizer">
+                    <span></span><span></span><span></span>
+                    <span></span><span></span><span></span>
+                    <span></span><span></span><span></span>
+                </div>
+
+                <div class="dreamy-progress">
+                    <div id="chapterTwoProgress"></div>
+                </div>
+
+                <div class="dreamy-time">
+                    <span id="chapterTwoCurrent">0:00</span>
+                    <span id="chapterTwoDuration">0:00</span>
+                </div>
+
+                <button id="vinylMusicButton" class="dreamy-play-button" onclick="toggleVinylMusic()">
+                    ⏸ Pause Our Song
+                </button>
+            </div>
+
+            <p class="dreamy-note">
+                Aap meri life ka woh part ho jise main kabhi skip nahi karna chahti. ♡
+            </p>
+
+            <button class="music-chapter-next" onclick="openMemoryMuseum()">
+                Ab kuch yaadein dekhte hain... 📸💗
+            </button>
+        </div>
+    </section>
+
+
+
+
+
+    <!-- CHAPTER 03: MEMORY MUSEUM -->
+    <section id="memoryMuseum" class="memory-museum hidden">
+
+        <div class="museum-heading">
+            <span class="museum-label">CHAPTER 03 — OUR LITTLE WORLD</span>
+            <h2>Little Moments, Big Feelings ♡</h2>
+            <p>8 little memories, a million reasons to smile. 💗</p>
+            <span class="museum-hint">Click a photo to see a memory ✨</span>
+        </div>
+
+        <div class="polaroid-gallery">
+
+            <button class="polaroid" onclick="openMemory(0)">
+                <img src="assets/photos/photo1.jpg" alt="His solo photo">
+                <span>My Favourite Boy ♡</span>
+            </button>
+
+            <button class="polaroid" onclick="openMemory(1)">
+                <img src="assets/photos/photo2.jpg" alt="Our first photo">
+                <span>Where It All Began ♡</span>
+            </button>
+
+            <button class="polaroid" onclick="openMemory(2)">
+                <img src="assets/photos/photo3.jpg" alt="His smile">
+                <span>That Smile 🥹</span>
+            </button>
+
+            <button class="polaroid" onclick="openMemory(3)">
+                <img src="assets/photos/photo4.jpg" alt="Our selfie">
+                <span>Us Being Us ♡</span>
+            </button>
+
+            <button class="polaroid" onclick="openMemory(4)">
+                <img src="assets/photos/photo5.jpg" alt="Funny photo">
+                <span>Certified Pagal 🤭</span>
+            </button>
+
+            <button class="polaroid" onclick="openMemory(5)">
+                <img src="assets/photos/photo6.jpg" alt="Favourite moment">
+                <span>My Happy Place ♡</span>
+            </button>
+
+            <button class="polaroid" onclick="openMemory(6)">
+                <img src="assets/photos/photo7.jpg" alt="Birthday boy">
+                <span>Birthday Boy 💗</span>
+            </button>
+
+            <button class="polaroid" onclick="openMemory(7)">
+                <img src="assets/photos/photo8.jpg" alt="Our special memory">
+                <span>My Favourite Memory ♡</span>
+            </button>
+
+        </div>
+
+        <button class="museum-next" onclick="openLetterChapter()">
+            Ek chhoti si baat aur... 💌
+        </button>
+
+    </section>
+
+    <!-- PHOTO POPUP -->
+    <div id="memoryPopup" class="memory-popup hidden">
+        <div class="memory-popup-card">
+
+            <button class="memory-close" onclick="closeMemory()">×</button>
+
+            <img id="popupPhoto" src="" alt="Our memory">
+            <h3 id="popupTitle"></h3>
+            <p id="popupCaption"></p>
+
+            <div class="memory-navigation">
+                <button onclick="changeMemory(-1)">← Previous</button>
+                <button onclick="changeMemory(1)">Next →</button>
+            </div>
+
+        </div>
+    </div>
+
+
+
+    <!-- ========== CHAPTER 04: LOVE LETTER ========== -->
+
+    <section id="chapterFour" class="letter-chapter hidden">
+
+        <div class="letter-stars" aria-hidden="true"></div>
+
+        <div class="letter-intro" id="letterIntro">
+            <span class="letter-eyebrow">CHAPTER 04 · ONLY FOR YOU</span>
+
+            <h2>Four Years,<br><em>A Thousand Memories.</em> ♡</h2>
+
+            <p>
+                Kuch baatein hain jo shayad main saamne
+                kabhi itni achhe se nahi keh paati...
+            </p>
+
+            <div class="envelope-scene">
+
+                <button type="button" class="love-envelope" id="loveEnvelope" onclick="openLoveLetter()"
+                    aria-label="Open your birthday letter">
+                    <span class="envelope-back"></span>
+                    <span class="envelope-flap"></span>
+                    <span class="envelope-front"></span>
+                    <span class="wax-seal">♡</span>
+                </button>
+
+            </div>
+
+            <p class="envelope-hint">Tap the envelope, meri jaan 💌</p>
+        </div>
+
+        <div class="letter-reveal hidden" id="letterReveal">
+
+            <span class="letter-eyebrow">A LETTER FROM MY HEART</span>
+
+            <div class="letter-paper">
+
+                <div class="paper-decoration">♡</div>
+
+                <h3>Happy Birthday, Meri Jaan! ♡</h3>
+
+
+                <div id="letterContent" class="birthday-letter-text">
+
+                    <p>Sabse pehle aapko janamdin ki dher saari badhai! ❤️ Mere saath aapka 4th birthday hai aur hamesha
+                        ki tarah bahut excitement hai.</p>
+
+                    <p>Aapke liye kya hi likhun... Aapne toh mujhe likha hai. In 4 saalon mein aapne mera jeevan bahut
+                        achha banaya. Really, you are the best yrr! ♡</p>
+
+                    <p>Jab pehli baar woh teen shabd bole the, tab laga tha bahut time hai. Khoob enjoy karenge, masti
+                        karenge aur saath rahenge. Par ab life aise phase mein le ja rahi hai jahan kuch time ke liye
+                        bye toh bolna hi hoga.</p>
+
+                    <p>Lekin yaad rakhna, bye ka bye nahi hona chahiye! Ek-ek pal ki update dena aur lena. Dekh lo kitni
+                        emotional hoon, abhi toh sirf message likh rahi hoon aur ismein bhi ro rahi hoon. 🥹</p>
+
+                    <p>Long distance, long distance lagna nahi chahiye. Ye hi aapke liye aur mere liye challenge hai. ❤️
+                    </p>
+
+                    <p>Khair, kahan ye emotional baatein karne lag gayi main! Apn aapki baat karte hain.</p>
+
+                    <p>Aap toh kitne achhe ho, kya hi bataun! Hamesha saath diya, har phase mein saath diya. Kabhi kisi
+                        cheez ki na nahi ki mere liye. Hamesha mere liye khade rahe.</p>
+
+                    <p>Kitni jagah gaye apn, wahan hamesha sambhala mujhe. Main har baar kuch na kuch gadbad karti hoon,
+                        uske baad bhi! 🤭</p>
+
+                    <p>Ye 4 saal ka safar bahut hi pyaara tha ji. Aisa nahi sochna ki ye birthday last hai saath mein.
+                        Main toh aapko pata hai kaisi hoon... Duniya ke kisi bhi kone mein ho aap, aapka peecha nahi
+                        chhodungi! 💗</p>
+
+                    <p>Library mein saath padhna, saath ghoomne jaana, scooty rides, masti, quality time... Canteen mein
+                        meri patties kha jaate ho bas! Parrr achha lagta hai. Yahi toh chhoti-chhoti memories hain apne
+                        beech.</p>
+
+                    <p>Aur lab mein aapke saath baithna, ghar jaate ho jab dukhi hona, subah-subah jaldi aake aapka wait
+                        karna...</p>
+
+                    <p>Woh Aghora ki sadak se nazrein na hatna jab tak aap dikh na jao. College aane ka maksad ho yrr
+                        aap toh, warna padhne kaun aata hai! 🥹❤️</p>
+
+                    <p>Baaki bookshelf ke peeche kitni mehnat se book dhoondhte hain, pata hai na? Samajh hi gaye honge,
+                        smart ho aap toh! 🤭💗</p>
+
+                    <p>Bas ab apne chaar saal ki memories taaza kar li. Ab aage ki kahani baad mein... ♡</p>
+
+                </div>
+
+
+                <div class="letter-signature">
+                    <p>Hamesha aapki, ♡</p>
+                    <span>Your favourite person 💗</span>
+                </div>
+
+            </div>
+
+            <button type="button" class="letter-next-button" onclick="openBirthdayChapter()">
+                Ek aur surprise... 🎂 ♡
+            </button>
+        </div>
+
+    </section>
+
+
+    <!-- ========== CHAPTER 05: BIRTHDAY SURPRISE ========== -->
+
+    <section id="chapterFive" class="birthday-chapter hidden">
+
+        <div class="birthday-glow birthday-glow-one"></div>
+        <div class="birthday-glow birthday-glow-two"></div>
+
+        <div class="birthday-content">
+
+            <span class="birthday-eyebrow">CHAPTER 05 · MAKE A WISH</span>
+
+            <h2>One More Year,<br><em>Still My Favourite Person.</em> ♡</h2>
+
+            <p class="birthday-subtitle">
+                Chaar birthdays, countless memories...
+                aur ab ek chhoti si wish sirf aapke liye. ❤️
+            </p>
+
+            <p class="candle-instruction" id="candleInstruction">
+                Make a wish... aur chaaron candles ko ek-ek karke tap kijiye. 🕯️♡
+            </p>
+
+
+            <div class="cake-scene luxury-cake" id="cakeScene">
+
+
+
+                <div class="cake-candles">
+
+                    <button type="button" class="cake-candle" onclick="blowCandle(this)">
+                        <span class="candle-flame"></span>
+                        <span class="candle-stick"></span>
+                    </button>
+
+                    <button type="button" class="cake-candle" onclick="blowCandle(this)">
+                        <span class="candle-flame"></span>
+                        <span class="candle-stick"></span>
+                    </button>
+
+                    <button type="button" class="cake-candle" onclick="blowCandle(this)">
+                        <span class="candle-flame"></span>
+                        <span class="candle-stick"></span>
+                    </button>
+
+                    <button type="button" class="cake-candle" onclick="blowCandle(this)">
+                        <span class="candle-flame"></span>
+                        <span class="candle-stick"></span>
+                    </button>
+
+                </div>
+
+
+
+                <div class="cake-top-layer">
+                    <div class="cake-drip"></div>
+                    <span class="cake-heart">♡</span>
+                    <div class="cake-pearls">✦ ♡ ✦</div>
+                </div>
+
+                <div class="cake-middle-layer">
+                    <div class="cake-drip"></div>
+                    <span class="cake-middle-text">four years of us</span>
+                    <div class="cake-pearls">✧ ✧ ✧ ✧ ✧</div>
+                </div>
+
+                <div class="cake-bottom-layer">
+                    <div class="cake-drip"></div>
+                    <span class="cake-bottom-text">Happy Birthday ♡</span>
+                    <div class="cake-pearls">✦ ✦ ✦ ✦ ✦</div>
+                </div>
+
+                <div class="cake-plate"></div>
+                <div class="cake-shadow"></div>
+            </div>
+
+
+
+            <div id="birthdayWishReveal" class="birthday-wish-reveal hidden">
+                <div class="wish-sparkle">✦ ♡ ✦</div>
+                <h3>Happy Birthday, Meri Jaan! 🎂</h3>
+                <p>
+                    Bas yahi wish hai ki aap hamesha khush raho,
+                    apne saare dreams poore karo, aur life aapko
+                    woh sab de jo aap deserve karte ho.
+                </p>
+                <p>
+                    Aur haan ji... chahe kitni bhi doori aa jaaye,
+                    apni masti, apni memories aur apn dono
+                    hamesha aise hi rahenge. ♡
+                </p>
+                <span>Four birthdays down, forever to go. ❤️</span>
+            </div>
+            <button type="button" id="birthdayFinalButton" class="birthday-final-button hidden"
+                onclick="openFinalChapter()">
+                ✨ Ek Aakhri Surprise... ♡
+            </button>
+        </div>
+
+        <div id="birthdayConfetti" class="birthday-confetti" aria-hidden="true"></div>
+
+        <button type="button" id="birthdayFinalButton" class="birthday-final-button hidden"
+            onclick="openFinalChapter()">
+            ✨ Ek Aakhri Surprise... ♡
+        </button>
+    </section>
+
+
+    <!-- ========== CHAPTER 06: OUR FOREVER UNIVERSE ========== -->
+
+    <section id="chapterSix" class="forever-chapter hidden">
+
+        <div class="forever-stars" id="foreverStars"></div>
+
+        <div class="forever-content">
+
+            <span class="forever-eyebrow">
+                CHAPTER 06 · THE STORY NEVER ENDS
+            </span>
+
+            <div class="forever-infinity">∞</div>
+
+            <h2>
+                Not The End.<br>
+                <em>Just Another Beginning.</em>
+            </h2>
+
+            <p class="forever-intro">
+                Kuch stories ka ending nahi hota...
+                bas har naye din ek naya chapter judta hai. ♡
+            </p>
+
+            <div class="forever-counter">
+                <span class="forever-counter-label">FOUR BIRTHDAYS TOGETHER</span>
+                <div class="forever-counter-number">04</div>
+                <span class="forever-counter-caption">
+                    and a lifetime of memories still waiting...
+                </span>
+            </div>
+
+            <div class="forever-message">
+                <span class="forever-quote">“</span>
+
+                <p>
+                    Humne saath mein itne saare moments jiye hain...
+                    kuch bahut funny, kuch emotional,
+                    aur kuch aise jo hamesha yaad rahenge.
+                </p>
+
+                <p>
+                    Aage life humein kahin bhi le jaaye,
+                    chahe kitni bhi doori ho,
+                    bas ek promise hai...
+                    hum ek doosre ki life ka hissa
+                    hamesha bane rahenge.
+                </p>
+
+                <p class="forever-special">
+                    Because in every universe,<br>
+                    I'd still choose you. ♡
+                </p>
+
+                <span class="forever-quote-end">”</span>
+            </div>
+
+            <div class="forever-ending">
+                <div class="forever-heart">♡</div>
+
+                <h3>To Be Continued...</h3>
+
+                <p>
+                    In every tomorrow. In every little moment.<br>
+                    In every version of us.
+                </p>
+
+                <span>HAPPY BIRTHDAY, MY FAVOURITE PERSON ♡</span>
+            </div>
+
+            <button class="forever-replay" onclick="replayOurUniverse()">
+                ↺ Relive Our Story
+            </button>
+
+        </div>
+
+    </section>
+
+
+    <script src="script.js"></script>
+
+
+    <!-- Saibo background music -->
+    <audio id="backgroundMusic" loop preload="auto">
+        <source src="assets/music/our-song.mp3" type="audio/mpeg">
+    </audio>
+
+    <!-- O Maahi Chapter 02 -->
+    <audio id="chapterTwoMusic" preload="auto">
+        <source src="assets/music/chapter-two.mp3" type="audio/mpeg">
+    </audio>
+
+    <button id="musicToggle" onclick="toggleBackgroundMusic()">
+        🔊
+    </button>
+
+    <script src="script.js"></script>
+    <script src="chapter5.js"></script>
+
+</body>
+
+</html>
